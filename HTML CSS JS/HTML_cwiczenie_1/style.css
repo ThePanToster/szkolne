@@ -1,0 +1,46 @@
+body{
+    margin: 0px;
+}
+
+.pasek{
+    width: 100%;
+    height: 150px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    font-size: 16pt;
+    margin: 20px 0px;
+}
+
+#main{
+    border: 1px green solid;
+    width: 800px;
+    margin: auto;
+    padding: 10px;
+    font-family: Verdana;
+}
+
+#navi{
+    width: 800px;
+    margin: auto;
+    padding: 10px;
+    border: 1px green solid;
+}
+
+#euglena{
+    background-image: url(euglena.jpg);
+    width: 667px;
+    height: 397px;
+    margin: auto;
+}
+
+#koment{
+    color: red;
+    font-style: italic;
+    line-height: 805px;
+}
+
+#uppage{
+    margin-left: 90%;
+}
