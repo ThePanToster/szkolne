@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 8 - interpretacja typów danych</title>
+	<meta charset="UTF-8">
+    <style>
+	    div {border: 1px solid black; padding: 5px;}
+	</style>
+</head>
+
+<body>
+   <div id="wynik">
+        <h3>Interpretacja typów danych</h3>
+   </div>
+   
+   <script>
+       var temp = document.getElementById("wynik");
+       x = "napis";    //string
+       temp.innerHTML += typeof x + ", ";
+	   x = 16;         //number
+	   temp.innerHTML += typeof x + ", ";
+	   x = { imie : "Jan" , 
+	         nazwisko : "Nowak"
+		   };          //object
+/*0*/  temp.innerHTML += typeof x + "<br><br>";
+	   x = 16 + "napis";           //konwersja na string
+	   
+/*1*/  temp.innerHTML += "1) " + x + " (" + typeof x + ") " + "<br><br>";
+	   
+	   x = "napis" + 16;           //konwersja na string
+/*2*/  temp.innerHTML += "2) " + x + " (" + typeof x + ") " + "<br><br>";
+
+	   x = 23 + 7 + "napis";      //konwersja na string, ale najpierw obliczyl - priorytet od lewej do prawej: (23 + 7) + "napis"
+/*3*/  temp.innerHTML += "3) " + x + " (" + typeof x + ") " + "<br><br>";
+
+	   x = 23 + "napis" + 7;      //konwersja na string, priorytet L / R 
+	                              // (23 + "napis") + 7
+/*4*/  temp.innerHTML += "4) " + x + " (" + typeof x + ") " + "<br><br>";
+	   
+	   //porównania
+	   x = '7';
+	   y = 4;
+	   z = 7;
+	   // == porownanie wartosci (bez wzgledu na typ)
+	   // === porownanie wartosci i typu
+/*5*/  temp.innerHTML += "5) x=" + x + ", y=" + y + ", z=" + z + "<br><br>";/*6*/  temp.innerHTML += (x==y) + ", " + (x===z) + ", " + (y != z) + ", " + (y==z) + "<br><br>";    
+
+       //obiekty
+	   x = {imie: "Jan", nazwisko: "Nowak", wiek: 35, kolorOczu: "niebieskie"};
+/*7*/  temp.innerHTML += "7) " + x.imie + " " + x.nazwisko + " ma " + x.wiek + " lat (" + typeof x + ")<br><br>"; 
+/*8*/  temp.innerHTML += "8) " + typeof x.imie + ", " + typeof x.nazwisko + ", " + typeof x.wiek + "<br><br>";
+
+       x = null;        //wyczyszczenie zawartosci zmiennej x
+/*9*/  temp.innerHTML += "9) " + /*typeof x.imie + ", " + typeof x.nazwisko + ", " + typeof x.wiek + */ typeof x + "<br><br>";
+
+       x = {imie: "Anna", nazwisko: "Szmyd", wiek: 22, kolorOczu: "brązowe"};
+/*10*/ temp.innerHTML += "10) " + x.imie + " " + x.nazwisko + " ma " + x.wiek + " lat (" + typeof x + ")<br><br>";	   
+
+       x = undefined;   //wyczyszczenie typu zmiennej z
+/*11*/  temp.innerHTML += "11) " + /*typeof x.imie + ", " + typeof x.nazwisko + ", " + typeof x.wiek + */ typeof x + "<br><br>";
+
+       // null == undefined    TRUE
+	   // null === undefined   FALSE
+       a = null;
+	   b = undefined;
+	   var c;    // c jest undefined
+/*12*/ temp.innerHTML += "12) a == b (" + (a==b) + "), a===b (" + (a === b) + ") b == c (" + (b==c) + "), c jest: " + typeof c + "<br><br>";
+       
+	   var y; // y jest number, poniewaz bylo ostatnie uzycie jako number (linia 42)
+/*13*/ temp.innerHTML += "13) a == b (" + (a==b) + "), a===b (" + (a === b) + ") b == y (" + (b==y) + "), y jest: " + typeof y + "<br><br>"; 
+
+       x = 3;
+	   y = 3.0;
+/*14*/ temp.innerHTML += "14) x==y (" + (x==y) + "), x===y (" + (x===y) + ")<br><br>";
+   </script>
+  
+</body>
+</html>	

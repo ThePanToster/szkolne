@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+      <title>Ćwiczenie 16 - operacje logiczne i bitowe</title>
+</head>
+<body>
+      Ćwiczenie 16 - operacje logiczne i bitowe<br>
+	  <h4>Operacje logiczne</h4>
+	  <script>
+          i = 5;
+		  document.write("i = ", i, "<br>");
+		  document.write("i == 5 -> ", i==5, "<br>");
+		  document.write("i != 5 -> ", i!=5, "<br>");
+		  document.write("i > 1 -> ", i>1, "<br>");
+		  document.write("i <= 5 -> ", i<=5, "<br>");
+		  document.write("i == \"5\" -> ", i=="5", "<br>");
+		  document.write("i === \"5\" -> ", i==="5", "<br>"); //porównanie wartosci i typu
+          
+		  i = 5;
+		  j = 10;
+		  document.write(i, " && ", j, " = ", i && j, "<br>");
+		  wynik = Boolean(i && j);
+		  document.write(i, " && ", j, " = ", wynik, "<br>");
+		  j = 10;
+		  document.write(i, " || ", j, " = ", i || j, "<br>");
+		  wynik = Boolean(i || j);
+		  document.write(i, " || ", j, " = ", wynik, "<br>");
+		  document.write("!(", i, " || ", j, ") = ", !wynik, "<br>");
+		  
+		  
+	  </script>
+	  
+	  <h4>Operacje bitowe</h4>
+	  <script>
+	  // &  iloczyn bitowy
+	  // |  suma bitowy
+	  // ^  xor (suma modulo 2)
+	  // ~  negacja bitowa
+	  // >> przesunięcie bitowe w prawo
+	  // << przesunięcie bitowe w lewo
+	  // >>> ?
+	  
+	  i = 19;           // 10011
+	  j = 22;           // 10110
+	  wynik = i & j;    // 10010
+	  wynik2 = i | j;   // 10111
+	  wynik3 = i ^ j;   // 00101
+	  document.write(i, " & ", j, " = ", wynik, " (", wynik.toString(2), ")", "<br>");
+	  document.write(i, " | ", j, " = ", wynik2, " (", wynik2.toString(2), ")", "<br>");
+	  document.write(i, " ^ ", j, " = ", wynik3, " (", wynik3.toString(2), ")", "<br>");
+	  // konwersja do iinych systemów liczbowych
+	  // document.write(wynik.toString(16).toUpperCase(), " ", wynik.toString(8));
+	  
+	  wynik3 = ~wynik3; //11010   // kod U2
+	  document.write("~wynik = ", wynik3, " (", wynik3.toString(2), ")", "<br>");
+	  i = 17;           //10000
+	  wynik4 = i >> 1;  // 1000    //dzielenie całkowite przez potęgi 2 
+	  document.write("i = ", i, " (", i.toString(2), ")", "<br>");
+	  document.write("i >> 1 = ", wynik4, " (", wynik4.toString(2), ")", "<br>");
+	  wynik5 = i >>> 1; //(1)1000
+	  document.write("i >>> 1 = ", wynik5, " (", wynik5.toString(2), ")", "<br>");
+	  i = 8;
+	  wynik6 = i << 3;  //mnozenie przez 2 do potegi (ilosc przesunietych bitow)
+	  document.write("i << 3 = ", wynik6, " (", wynik6.toString(2), ")", "<br>");
+	  
+	  i = 19;
+	  j = 23;
+	  document.write("i = ", i, "<br>j = ", j, "<br>");
+	  i ^= j;   // i = i ^ j;
+	  j ^= i;   //j = j ^ i;
+	  i ^= j;   // i = i ^ j;
+	  document.write("i = ", i, "<br>j = ", j, "<br>");
+	  </script>
+
+</body>
+</html>
+
+
+
+

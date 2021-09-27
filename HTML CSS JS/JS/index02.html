@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 2 - wprowadzanie informacji (input)</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+   <div id="wynik">
+   </div>
+   <script>
+    x = 10;
+	document.write(x + "<br>");
+	x = "tekst";
+	document.write(x + "<br>");
+	//liczba1 = Number(prompt("Wprowadź pierwszą liczbę:"));  //Number() konwersja na liczbę
+	//liczba2 = Number(prompt("Wprowadź drugą liczbę:", 10));
+	//liczba1 = parseInt(prompt("Wprowadź pierwszą liczbę:"));  //parseInt() konwersja na liczbę calkowitą
+	//liczba2 = parseInt(prompt("Wprowadź drugą liczbę:", 10));
+	liczba1 = parseFloat(prompt("Wprowadź pierwszą liczbę:"));  //parseInt() konwersja na liczbę rzeczywista
+	liczba2 = parseFloat(prompt("Wprowadź drugą liczbę:", 10));
+	wynik = liczba1 + liczba2;
+	document.write(liczba1 + " + " + liczba2 + " = " + wynik);
+		  
+   </script>
+
+
+   
+</body>
+</html>	

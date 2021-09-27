@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 4 - instrukcja warunkowa</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+   <div style="border: 1px solid black; padding: 5px;" id="wynik">
+        <h3>Porównanie dwóch liczb</h3>
+   </div>
+   <script>
+      tekst = "";
+      x = Number(prompt("x="));
+	  y = Number(prompt("y="));
+	  if (x > y)
+	     tekst = x + " > " + y;
+	  else
+         if (x < y)
+            tekst = x + " < " + y;	
+         else	
+            tekst = x + " = " + y;		 
+	  document.getElementById("wynik").innerHTML += tekst;  
+   </script>
+</body>
+</html>	

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 9 - Podstawowe pętle i liczby losowe</title>
+	<meta charset="UTF-8">
+    <style>
+	    div {border: 1px solid black; padding: 5px;}
+		span {color: red;}
+	</style>
+</head>
+
+<body>
+   <div id="wynik">
+        <h3>Podstawowe pętle i liczby losowe</h3>
+   </div>
+   
+   <script>
+    	
+	//Podstawowe pętle w JS działają podobnie jak w c++
+	document.write("<br>Przyklad pętli <b>for</b> wyświetlającej 6 kolejnych liczb od 5 do 10: ");
+	document.write("<span>");
+	for (i = 5; i <= 10; i++) {
+	    document.write(i + " ");
+	}
+	document.write("</span>");
+	
+	document.write("<br>Ten sam przyklad, ale z użyciem pętli <b>while</b>: ");
+    document.write("<span>");
+	i = 5;
+	while (i <= 10) {
+        document.write(i + " ");
+		i++;
+    }
+    document.write("</span>");	
+	
+	document.write("<br>I jeszcze raz ten sam przyklad, tym razem z użyciem pętli <b>do-while</b>: ");
+    document.write("<span>");
+	i = 5;
+	do{
+        document.write(i + " ");
+		i++;
+    }while (i <= 10);
+    document.write("</span>");
+	
+//-------------------------------------------------------------------------------------	
+	// ZADANIE część I - na podstawie powyższych przykładów:
+	// za pomocą pętli for wyświetl liczby: 2 4 6 8 10 12
+	// za pomocą pętli for wyświetl liczby: 10 7 4 1 -2 -5
+	
+	// za pomocą pętli while wyświetl liczby: 5 10 15 20 25 30 35 40 45 50
+	// za pomocą pętli while wyświetl liczby: 0 -3 -6 -9 -12 -15 -18 -21
+	
+	// za pomocą pętli do-while wyświetl liczby: -40 -33 -26 -19 -12 -5 2 9 16
+	// za pomocą pętli do-while wyświetl liczby: 49 44 39 34 29 24 19
+	
+	
+//-------------------------------------------------------------------------------------	
+	/* ZADANIE część II
+       Zasada losowania jest podobna jak w c++ tylko trochę inaczej się zapisuje - nie potrzeba włączać generatora :) UWAGA! Zamiast '%' jest '*' 
+	   
+	   Przyklady:
+       los = Math.floor(Math.random() * 10);      //losowa liczba ze zbioru <0; 9>
+	   los = Math.floor(Math.random() * 10 + 3);  //losowa liczba ze zbioru <3; 12>
+	   los = Math.floor(Math.random() * 10 - 5);  //losowa liczba ze zbioru <-5; 4>
+	   
+	   Przykład wyświetlania 4 liczb losowych z zakresu <-3; 3>
+	   for (i = 1; i < 5; i++) {
+           los = Math.floor(Math.random() * 7 - 3);   
+	       document.write(los + " ");
+	   }
+    */
+	
+	// Za pomocą pętli for wyświetl 10 losowych liczb z zakresu <50; 60>
+	// Za pomocą pętli while wyświetl 15 losowych liczb z zakresu <23; 39>
+	// Za pomocą pętli do-while wyświetl 18 losowych liczb z zakresu <15; 44>
+	
+	
+//-------------------------------------------------------------------------------------	
+	/* ZADANIE część III - użyj pętli nieskończonych i instrukcji BREAK (jak w c++)
+	   Przykład nieskończonej pętli for wyświetlającej liczby losowe ze zbioru <0; 14> aż do wylosowania 10
+	   
+	   for (;;) {
+	       los =   Math.floor(Math.random() * 15);   // <0; 14>
+	       document.write(los + " ");
+		   if (los == 10)
+		       break;
+	   }
+	*/
+	
+	
+	// za pomocą pętli nieskończonej for (;;) wyświetlaj liczby losowe z zakresu <-20; 20> aż do wylosowania 0
+	
+	// za pomocą pętli nieskończonej while (true) wyświetlaj liczby losowe z zakresu <13; 35> aż do wylosowania 13
+	
+	// za pomocą pętli nieskończonej do{ }while(true); wyświetlaj liczby losowe z zakresu <-3; 62> dopóki wylosowana liczba jest dodatnia
+
+ 	
+   </script>
+  
+</body>
+</html>	

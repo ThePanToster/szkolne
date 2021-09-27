@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+      <title>Ćwiczenie 14 - konwersje typów</title>
+</head>
+<body>
+      Ćwiczenie 14 - konwersje typów<br>
+	  <h4>Liczba na string</h4>
+	  <script>
+	      x = 303;
+		  tekst1 = String(x);
+		  tekst2 = String(303);
+		  tekst3 = String(300 + 3);
+		  document.write("Funkcja String():<br>" + x + " (" + typeof(x) + ")<br>" + tekst1 + " (" + typeof(tekst1) + ")<br>"  + tekst2 + " (" + typeof(tekst2) + ")<br>" + tekst3 + " (" + typeof(tekst3) + ")<br>");
+          
+          tekst1 = x.toString();
+		  tekst2 = (303).toString();
+		  tekst3 = (277+26).toString();
+		  document.write("<br>Metoda .toString():<br>" + x + " (" + typeof(x) + ")<br>" + tekst1 + " (" + typeof(tekst1) + ")<br>"  + tekst2 + " (" + typeof(tekst2) + ")<br>" + tekst3 + " (" + typeof(tekst3) + ")<br>");
+		  
+		  x = 9.762;
+		  tekst1 = x.toFixed(0);
+		  tekst2 = x.toFixed(2);
+		  tekst3 = x.toFixed(4);
+		  tekst4 = x.toFixed(6);
+		  document.write("<br>Metoda .toFixed():<br>" + x + " (" + typeof(x) + ")<br>" + tekst1 + " (" + typeof(tekst1) + ")<br>"  + tekst2 + " (" + typeof(tekst2) + ")<br>" + tekst3 + " (" + typeof(tekst3) + ")<br>"  + tekst4 + " (" + typeof(tekst4) + ")<br>");
+		  
+		  tekst1 = x.toPrecision();
+		  tekst2 = x.toPrecision(2);
+		  tekst3 = x.toPrecision(4);
+		  tekst4 = x.toPrecision(6);
+		  document.write("<br>Metoda .toPrecision():<br>" + x + " (" + typeof(x) + ")<br>" + tekst1 + " (" + typeof(tekst1) + ")<br>"  + tekst2 + " (" + typeof(tekst2) + ")<br>" + tekst3 + " (" + typeof(tekst3) + ")<br>"  + tekst4 + " (" + typeof(tekst4) + ")<br>");
+		  
+      </script>
+	  <hr>
+	  <h4>Boolean na string</h4>
+	  <script>
+	      x = true;
+		  y = false;
+		  tekst1 = String(x);
+		  tekst2 = String(y);
+		   document.write("Funkcja String():<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>"+ tekst1 + " (" + typeof(tekst1) + ")<br>"  + tekst2 + " (" + typeof(tekst2) + ")<br>");
+		   
+		   tekst1 = x.toString();
+		   tekst2 = y.toString();
+		   document.write("<br>Metoda .toString():<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>"+ tekst1 + " (" + typeof(tekst1) + ")<br>"  + tekst2 + " (" + typeof(tekst2) + ")<br>");
+	  </script>
+	  
+	  <hr>
+	  <h4>Data na string</h4>
+	  <script>
+	       x = Date();
+		   tekst1 = x.toString();
+		   document.write("Metoda .toString():<br>" + x + " (" + typeof(x) + ")<br>" + tekst1 + " (" + typeof(tekst1) + ")<br>");
+		   
+		   x = new Date();
+		   tekst1 = x.toString();
+		   rok = x.getFullYear();
+		   document.write("<br>Metoda .toString():<br>" + x + " (" + typeof(x) + ")<br>" + rok + " (" + typeof(rok) + ")<br>" + tekst1 + " (" + typeof(tekst1) + ")<br>");
+	  </script>
+	  <hr>
+	  <h4>Data na liczbę</h4>
+	  <script>
+	      x = new Date();
+		  liczba = Number(x);
+		  document.write("Funkcja Number():<br>" + x + " (" + typeof(x) + ")<br>" + liczba + " (" + typeof(liczba) + ")<br>");
+		  
+	  </script>
+	  <hr>
+	  <h4>String na liczbę</h4>
+	  <script>
+	      x = Number("3.14");
+		  y = Number(" ");
+		  v = Number("");       
+		  z = Number("99 65");  // NaN - Not a Number
+		  document.write("Funkcja Number():<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>" + v + " (" + typeof(v) + ")<br>" + z + " (" + typeof(z) + ")<br>");
+		  
+		  x = parseInt("3.14");
+		  y = parseInt(" ");
+		  v = parseInt("");       
+		  z = parseInt("99 65");  // NaN - Not a Number
+		  document.write("<br>Funkcja parseInt():<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>" + v + " (" + typeof(v) + ")<br>" + z + " (" + typeof(z) + ")<br>");
+		  
+		  x = parseFloat("3.14");
+		  y = parseFloat(" ");   
+		  v = parseFloat("");       
+		  z = parseFloat("99 65");  // NaN - Not a Number
+		  document.write("<br>Funkcja parseFloat():<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>" + v + " (" + typeof(v) + ")<br>" + z + " (" + typeof(z) + ")<br>");
+		  
+	  </script>
+	  	  <hr>
+	  <h4>Boolean na liczbę</h4>
+	  <script>
+	      x = true;
+		  y = false;
+		  liczba1 = Number(x);
+		  liczba2 = Number(y);
+		  document.write("Funkcja parseFloat():<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>" + liczba1 + " (" + typeof(liczba1) + ")<br>" + liczba2 + " (" + typeof(liczba2) + ")<br>");
+		  
+	  </script>
+	  <hr>
+	  <h4>Konwersja jednoargumentowa (unary) na liczbę</h4>
+	  <script>
+	      x = "5.34";
+		  y = + x;
+		  document.write("Konwersja jednoargumentowa:<br>" + x + " (" + typeof(x) + ")<br>" + y + " (" + typeof(y) + ")<br>");
+	  </script>
+	  <hr>
+	  <h4>Automatyczna konwersja typów</h4>
+	  <script> 
+	      x = 5 + null;
+		  document.write(" 5 + null = " + x + " (" + typeof(x) + ")<br>");
+		  x = "5" + null;
+		  document.write(" \"5\" + null = " + x + " (" + typeof(x) + ")<br>");
+		  x = "5" + 14;
+		  document.write(" \"5\" + 14 = " + x + " (" + typeof(x) + ")<br>");
+		  x = "5" - 14;
+		  document.write(" \"5\" - 14 = " + x + " (" + typeof(x) + ")<br>");
+		  x = "5" * "14";
+		  document.write(" \"5\" * \"14\" = " + x + " (" + typeof(x) + ")<br>");
+		  x = "12" / "5";
+		  document.write(" \"12\" / \"5\" = " + x + " (" + typeof(x) + ")<br>");
+	  </script>
+
+</body>
+</html>
+
+
+
+

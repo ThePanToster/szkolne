@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 6 - zasięg zmiennych. Stałe w JS</title>
+	<meta charset="UTF-8">
+    <style>
+	    div {border: 1px solid black; padding: 5px;}
+	</style>
+</head>
+
+<body>
+   <div id="wynik">
+        <h3>Zasięg zmiennych</h3>
+   </div>
+    <div id="stale">
+        <h3>Stałe w JS</h3>
+   </div>
+   <script>
+   //nazwy zmiennych nie mogą rozpoczycnać się cyfrą, nie można używac słów kluczowych, np. for, if., nie może być spacji w nazwie
+     var x = 100;   //zasieg w obrębie całego skryptu
+	     For = 100;  // jest poprawnie, ponieważ For nie jest słowem kluczowym (for != For)
+//     {
+//	     x = 13;
+//     }
+
+     {
+	     let x = 13;
+		 document.getElementById("wynik").innerHTML += "Lokalnie x=" + x + "<br>";
+     }
+       document.getElementById("wynik").innerHTML += "Globalnie x=" + x + "<br>";
+	 PI = 3.14; 
+	 
+	 {
+	     const PI = 10.234;
+		 //PI = 3.14;  // nie można modyfikować stałych (const)
+		 document.getElementById("stale").innerHTML += "PI=" + PI + "<br>";
+     }
+       document.getElementById("stale").innerHTML += "PI=" + PI + "<br>";
+   </script>
+  
+</body>
+</html>	

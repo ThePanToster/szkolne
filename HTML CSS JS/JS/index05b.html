@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 5 - instrukcja warunkowa</title>
+	<meta charset="UTF-8">
+	 <script>
+      x = Number(prompt("x="));
+	  y = Number(prompt("y="));
+	  z = Number(prompt("z="));
+	  tekst = "x = " + x + ", y = " + y + ", z = " + z + "<br> Największa to <b>";
+	  if(x > y)
+	     if(x > z)
+		     tekst += x;
+		 else
+		     tekst += z;
+      else
+ 	     if(y > z)
+		     tekst += y;
+		 else 
+             tekst += z;		 
+	  tekst += "</b>";
+	  document.getElementById("wynik").innerHTML += tekst;  
+	  document.write('Nie jest jeszcze znany element id="wynik"');
+   </script>
+</head>
+
+<body>
+   <div style="border: 1px solid black; padding: 5px;" id="wynik">
+        <h3>Największa z trzech wprowadzonych <u>różnych</u> liczb</h3>
+   </div>
+  
+</body>
+</html>	

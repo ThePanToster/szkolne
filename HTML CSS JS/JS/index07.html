@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 7 - Operatory (ciąg dalszy) i instrukcje przypisania</title>
+	<meta charset="UTF-8">
+    <style>
+	    div {border: 1px solid black; padding: 5px;}
+	</style>
+</head>
+
+<body>
+   <div id="wynik">
+        <h3>Operatory i instrukcje przypisania</h3>
+   </div>
+   
+   <script>
+       x = 5;
+	   y = 2; 
+	   tekst = x + " + " + y + " = " + (x+y) + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " - " + y + " = " + (x-y) + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " * " + y + " = " + x*y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " / " + y + " = " + x/y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " / " + y + " = " + parseInt(x/y) + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " MOD " + y + " = " + x%y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " ^ " + y + " = " + x ** y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = x + " ^ " + y + " = " + Math.pow(x, y) + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   tekst = "Aktualnie x=" + x + ", y=" + y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   x++;
+	   --y;
+	   tekst = "Aktualnie x=" + x + ", y=" + y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   x -= 2;
+	   y += 7;
+	   tekst = "Aktualnie x=" + x + ", y=" + y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   x *= 3;
+	   y /= 3;
+	   tekst = "Aktualnie x=" + x + ", y=" + y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   x %= 5;
+	   y **= 2;
+	   tekst = "Aktualnie x=" + x + ", y=" + y + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   
+	   wynikDzialania = 10 - 3 * 2.5 + 3 % 7;   //10 - (3 * 2.5) + (3 % 7)
+	   tekst = "<br>Łączenie lewostronne<br>wynikdzialania=" + wynikDzialania + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   
+	   wynikDzialania = 2 ** 3 ** 2;   // 2 ** (3 ** 2)  //2^(3^2)
+	   tekst = "<br>Łączenie prawostronne<br>wynikdzialania=" + wynikDzialania + "<br>";
+	   document.getElementById("wynik").innerHTML += tekst;
+	   
+   </script>
+  
+</body>
+</html>	

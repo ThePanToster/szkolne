@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ćwiczenie nr 3 - podstawowe działania arytmetyczne</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+   <div style="border: 1px solid black" id="wynik">
+        Tu będzie wynik jakiegoś działania
+   </div>
+   <script>
+    x = Number(prompt("x="));
+    y = Number(prompt("y="));
+	suma = x + y;
+	roznica = x - y;
+	iloczyn = x * y;
+	dzielenie = x / y;
+	reszta = x % y;
+	
+	tekst = "<br>" + x + " + " + y + " = " + suma;
+	tekst += "<br>Reszta z dzielenia: " + x + " MOD " + y + " = " + reszta;
+	document.getElementById("wynik").innerHTML += tekst;
+	
+	tekst = "<br>" + x + " / " + y + " = " + dzielenie.toFixed(2);
+	document.write(tekst); 
+	//toFixed(x) ograniczenie do x-miejsc po przecinku
+	
+	tekst = x + " * " + y + " = " + iloczyn;
+	console.log(tekst);
+	
+	tekst = x + " - " + y + " = " + roznica;
+	alert(tekst);	  
+   </script>
+ 
+</body>
+</html>	

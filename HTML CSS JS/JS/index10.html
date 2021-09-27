@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+      <meta http-equiv="Content-Language" content="pl" />
+      <title>Ćwiczenie 10 - NWD i NWW</title>
+      <style>
+         div {border: 1px solid black; margin: 5px; padding: 5px}
+      </style>
+</head>
+<body>
+      Znajdowanie największego wspólnego dzielnika dwóch liczb N+ (<span>algorytm Euklidesa) oraz obliczanie na tej podstawie największej wspólnej wielokrotności</span>:<br />
+	  <div id="wynik">
+	  </div>
+      <script>
+          var wynik = document.getElementById("wynik");
+		  do {
+		      x = Number(prompt("Wprowadź pierwszą liczbę N+ x="));
+		      y = Number(prompt("Wprowadź drugą liczbę N+ y="));
+		  }while (x < 1  || y < 1);
+		  nwdTekst = "NWD(" + x + "; " + y + ") = ";
+		  nwwTekst = "NWW(" + x + "; " + y + ") = ";
+		  var iloczyn = x * y;
+		  while (x % y != 0) {
+		     r = x % y;
+			 x = y;
+			 y = r;
+		  }
+		  var nww = iloczyn / y;
+		  wynik.innerHTML = nwdTekst + y + "<br>" + nwwTekst + nww;
+		  
+      </script>
+</body>
+</html>
+
+
+<!- zaczynamy o 10:35. proszę pobrać TEN PLIK (index10) z OneDrive lub plików w Teamsach ->
+

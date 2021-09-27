@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+      <title>Ćwiczenie 18 - ćwiczenia z tablicami</title>
+	  <style>
+	      span {color: red; font-weight: bold;}
+	  </style>
+</head>
+<body>
+	  <h3>Ćwiczenie 18 - ćwiczenia z tablicami</h3>
+      <script>
+           var n = 20;   //wielkość tablicy
+		   
+		   function losuj() {
+		       // var tablica = [];    //tablica lokalna (var)
+		       tablica = [];
+			   //tablica = new Array[];
+			   for (i = 0; i < n; i++)
+			       tablica[i] = Math.floor(Math.random() * 10);
+		   }
+		   
+		   function wyswietl() {
+		       for (i = 0; i < n; i++)
+			       document.write(tablica[i] + " ");
+		   }
+		   
+		   function srednia() {
+		       var suma = 0;
+		       for (i = 0; i < n; i++)
+			       suma += tablica[i];
+			   return suma/n;	   
+		   }
+		   
+		   //ilosc elementow < 5
+		   function policz5() {
+		   var licznik = 0;
+		      for (i = 0; i < n; i++)
+			     if (tablica[i] < 5)
+				     licznik++;
+			  return licznik;
+		   }
+		   
+		   function minimum() {
+		      minIndex = 0;
+		      var min = tablica[0];
+              for (i = 1; i < n; i++)	
+                  if (tablica[i] < min) {
+                      min = tablica[i];
+					  minIndex = i;
+				  }
+			  return min;	  
+		   }
+		   
+		   function wyswietlMinimum(nrMin) {
+		       for (i = 0; i < n; i++) {
+			       if (i == nrMin)
+				      document.write("<span>");
+			       document.write(tablica[i] + " ");
+				   if (i == nrMin)
+				      document.write("</span>");
+			   }
+		   }
+		   
+		   losuj();
+		   wyswietl();
+		   srednia();
+		   document.write("<br>Średnia elementów tablicy: " + srednia().toFixed(2));
+		   document.write("<br>Ilość elementów mniejszych od 5: " + policz5());
+		   document.write("<br>Najmniejszy element to: " + minimum() + " (" + minIndex + ")<br>");
+		   wyswietlMinimum(minIndex);
+      </script>
+	  <br>
+	  <button onclick = "alert('Najmniejszy element to ' + minimum());">Minimum</button>
+</body>
+</html>

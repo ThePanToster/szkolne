@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+      <title>Ćwiczenie 19 - tablice dwuwymiarowe</title>
+	  <style>
+	      span {color: red; font-weight: bold;}
+		  div {border: 1px solid black; margin: 5px; padding: 5px}
+		  button {margin: 5px;}
+	  </style>
+</head>
+<body>
+	  <h3>Ćwiczenie 19 - tablice dwuwymiarowe</h3>
+	  <div id ="wyniki">
+	       Tu bedą statystyki
+	  </div>
+	  <button onclick="stat1();">Parzyste</button>
+	  <button onclick="stat2();">Średnia</button>
+	  <button onclick="stat3();">Minimum</button>
+	  <button onclick="stat4();">Maximum</button>
+	  <br>
+      <script>
+	        function definiuj() {
+			    do {
+				   n = Number(prompt("Ilość wierszy <2;20> n="));
+				} while(isNaN(n) || n < 2 || n > 20);   //isNaN() zwraca true w przypadku wprowadzenia wartości nieliczbowej
+			    do {
+				   m = Number(prompt("Ilość kolumn <2;20> m="));
+				} while(isNaN(m) || m < 2 || m > 20);
+				tab = Array(n);
+				for (i = 0; i < n; i++)
+				    tab[i] = Array(m);
+				
+				//uzupełnienie danymi
+				for (i = 0; i < n; i++)
+				   for (j = 0; j < m; j++)
+				       tab[i][j] = Math.floor(Math.random() * 99 + 1);
+				
+			}
+			
+			function wyswietl() {
+			    document.write("Tablica " + n + "x" + m + "<br>");
+			    for (i = 0; i < n; i++) {
+				   for (j = 0; j < m; j++) {
+ 				        if (tab[i][j] < 10)
+						    document.write("0");
+				        document.write(tab[i][j] + " ");
+				   }
+				   document.write("<br>");
+				}
+			}
+			function parzyste() {
+			   var licznik = 0;
+			   for (i = 0; i < n; i++)
+				   for (j = 0; j < m; j++) 
+				      if (tab[i][j] % 2 == 0)
+					     licznik++;
+			   return licznik;
+			}
+			
+			function srednia() {
+			    var suma = 0;
+			    for (i = 0; i < n; i++)
+				   for (j = 0; j < m; j++)
+				       suma += tab[i][j];
+				return suma/(n*m);	   
+			}
+			
+			function minimum() {
+			    var min = tab[0][0];
+			    for (i = 0; i < n; i++)
+				   for (j = 0; j < m; j++)
+				       if (tab[i][j] < min)
+					       min = tab[i][j];
+				return min;		   
+			}
+			
+			function maximum() {
+			    var max = tab[0][0];
+			    for (i = 0; i < n; i++)
+				   for (j = 0; j < m; j++)
+				       if (tab[i][j] > max)
+					       max = tab[i][j];
+				return max;		   
+			}
+			
+			function stat1() {
+			      document.getElementById("wyniki").innerHTML = "Ilość elementów parzystych: " + parzyste();
+			}
+			
+			function stat2() {
+			      document.getElementById("wyniki").innerHTML = "Średnia elementów: " + srednia().toFixed(2);
+			}
+			
+			function stat3() {
+			      document.getElementById("wyniki").innerHTML = "Element najmniejszy: " + minimum();
+			}
+			
+			function stat4() {
+			      document.getElementById("wyniki").innerHTML = "Element największy: " + maximum();
+			}
+			
+			definiuj();
+			wyswietl();
+			
+			
+      </script>
+</body>
+</html>
