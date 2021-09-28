@@ -18,4 +18,6 @@ document.getElementById("rozdaj").addEventListener("click", function rozdaj(){
     los = Math.floor(Math.random() * 52);
     console.log(los+": "+talia[los]);
     mojeKarty.push(talia[los]);
+    talia.splice(los, 1);
+    document.getElementById("mojekarty").innerHTML = talia;
 });
