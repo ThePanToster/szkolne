@@ -1,0 +1,80 @@
+:root{
+    --color-primary: #e365c8;
+    --color-primary-light: #e68ed3;
+    --color-secondary: #7765E3;
+    --color-secondary-light: #9081e0;
+
+    --font-main: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-secondary);
+}
+
+.tasks{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+    gap: 1em;
+}
+
+.task{
+    border: 0.1em solid black;
+    background-color: var(--color-primary);
+    border-radius: 15%;
+    padding: 1em;
+    min-width: 20em;
+    min-height: 20em;
+    text-align: center;
+}
+
+.task > a{
+    text-decoration: none;
+    font-size: 10rem;
+    margin: 0 0.5em;
+    color: var(--color-secondary);
+}
+
+.task > form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+.task > form > textarea{
+    width: 100%;
+    height: 10em;
+    border: 1px solid var(--color-secondary-light);
+    border-radius: 0.2em;
+    background-color: var(--color-secondary-light);
+    resize: none;
+}
+
+.task > form > button{
+    height: 2em;
+    border: 1px solid var(--color-primary-light);
+    border-radius: 0.5em;
+    background-color: var(--color-primary-light);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.task > span{
+    color: red;
+    font-size: 2rem;
+}
