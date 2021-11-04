@@ -16,7 +16,8 @@
             $result = mysqli_query($connection, $query);
 
             if($result){
-                while ($row = mysqli_fetch_array($result)){
+                while ($row = mysqli_fetch_array($result)){ 
+                    
                     echo '<div class="task">'.$row['text'].'</div>';
                 }
             }
