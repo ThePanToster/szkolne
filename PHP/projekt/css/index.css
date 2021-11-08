@@ -5,7 +5,9 @@
     --color-accent-dark: #1e1e1e;
     --color-text: #FFFCFF;
 
-    --font-main: Arial, Helvetica, sans-serif;
+    --font-main: 'Jaldi', sans-serif;
+    --font-header: 'Coda Caption', sans-serif;
+    --font-nav: 'Russo One', sans-serif;
 }
 
 *,
@@ -20,6 +22,7 @@ html, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-main);
 }
 
 body{
@@ -45,10 +48,13 @@ header{
     gap: 2em;
     color: var(--color-text);
     padding: 0 5vw;
+    position: fixed;
+    width: 100%;
 }
 
 header > h1{
     flex: 1 1 70%;
+    font-family: var(--font-header);
 }
 
 .signin,
@@ -61,6 +67,8 @@ header > h1{
     text-decoration: none;
     transform: scale(1);
     transition: ease-in 200ms;
+    text-align: center;
+    font-family: var(--font-nav);
 }
 
 .signin:hover,
