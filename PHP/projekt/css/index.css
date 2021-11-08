@@ -22,18 +22,68 @@ html, body{
     box-sizing: border-box;
 }
 
-/* Header */
-
 body{
     display: grid;
-    grid-template: "hooter hooter hooter" 3em
-                   ". content ." auto
-                   "hooter hooter hooter" 3em
-                   / 1fr minmax(200px, 5fr) 1fr;
+    grid-template: "header header header" 6em
+                   ". main ." auto
+                   "footer footer footer" 5em
+                   / 1fr minmax(min-content,4fr) 1fr;
+    background-color: var(--color-accent-dark);
 }
+
+/* Header */
 
 header, footer{
     background-color: var(--color-primary);
-    grid-area: hooter;
 }
 
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    color: var(--color-text);
+    padding: 0 5vw;
+}
+
+header > h1{
+    flex: 1 1 70%;
+}
+
+.signin,
+.signup{
+    display: block;
+    padding: 1em 3em;
+    flex: 1 0;
+    border-radius: 1em;
+    white-space: nowrap;
+    text-decoration: none;
+    transform: scale(1);
+    transition: ease-in 200ms;
+}
+
+.signin:hover,
+.signup:hover{
+    transform: scale(1.15);
+    transition: ease-out 200ms;
+}
+
+.signup{
+    background: var(--color-text);
+    color: var(--color-accent-dark);
+}
+
+.signin{
+    background: var(--color-primary-dark);
+    color: var(--color-text);
+}
+
+main{
+    background-color: var(--color-accent);
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
