@@ -1,0 +1,39 @@
+:root{
+    --color-primary: #3c3c3c;
+    --color-accent: #252526;
+    --color-primary-dark: #333333;
+    --color-accent-dark: #1e1e1e;
+    --color-text: #FFFCFF;
+
+    --font-main: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+body{
+    display: grid;
+    grid-template: "hooter hooter hooter" 3em
+                   ". content ." auto
+                   "hooter hooter hooter" 3em
+                   / 1fr minmax(200px, 5fr) 1fr;
+}
+
+header, footer{
+    background-color: var(--color-primary);
+    grid-area: hooter;
+}
+
