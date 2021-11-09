@@ -52,7 +52,7 @@ header{
     width: 100%;
 }
 
-header > h1{
+header > h3{
     flex: 1 1 70%;
     font-family: var(--font-header);
 }
@@ -87,9 +87,51 @@ header > h1{
     color: var(--color-text);
 }
 
+/* Main */
+
 main{
     background-color: var(--color-accent);
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 2em;
+}
+
+.postmake{
+    display: none;
+}
+
+.post_img{
+    width: 4em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-image: url("../profpics/default.png");
+    background-size: cover;
+}
+
+.post_heart{
+    width: 4em;
+    aspect-ratio: 1;
+    fill: red;
+}
+
+.head{
+    display: flex;
+    background: var(--color-text);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content{
+    background: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_title{
+    margin-top: 0;
 }
 
 footer{
