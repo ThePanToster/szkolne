@@ -4,6 +4,8 @@
     --color-primary-dark: #333333;
     --color-accent-dark: #1e1e1e;
     --color-text: #FFFCFF;
+    --color-text-dark: #cfcfcf;
+    --color-heart: #fa415a;
 
     --font-main: 'Jaldi', sans-serif;
     --font-header: 'Coda Caption', sans-serif;
@@ -73,8 +75,82 @@ header > h3{
 
 .signin:hover,
 .signup:hover{
+    cursor: pointer;
     transform: scale(1.15);
     transition: ease-out 200ms;
+}
+
+.popup{
+    display: none;
+}
+
+.popup > form{
+    background-color: var(--color-accent);
+    border-radius: 1em;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.popup label{
+    position: absolute;
+    margin-top: 14em;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+#btn-login:checked + .popup label{
+    margin-top: 10.5em;
+}
+
+.popup label:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all ease-out 200ms;
+}
+
+.popup > form > input{
+    border-radius: 1em;
+    font-size: 1.5rem;
+    padding: 0.5em 2em;
+}
+
+#btn-register{
+    display: none;
+}
+
+#btn-register-close{
+    display: none;
+}
+
+#btn-login{
+    display: none;
+}
+
+#btn-login-close{
+    display: none;
+}
+
+
+#btn-register:checked + .popup,
+#btn-login:checked + .popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .signup{
@@ -94,6 +170,7 @@ main{
     grid-area: main;
     display: flex;
     flex-direction: column;
+    row-gap: 4em;
     padding: 1em 2em;
 }
 
@@ -105,21 +182,34 @@ main{
     width: 4em;
     aspect-ratio: 1;
     border-radius: 50%;
+    border: 0.2em solid var(--color-text-dark);
     background-image: url("../profpics/default.png");
     background-size: cover;
 }
 
+.post_author{
+    font-size: 1.5rem;
+}
+
 .post_heart{
-    width: 4em;
+    width: 3em;
     aspect-ratio: 1;
-    fill: red;
+    fill: var(--color-heart);
+}
+
+.article{
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .head{
     display: flex;
-    background: var(--color-text);
+    background: var(--color-accent-dark);
     justify-content: space-around;
     align-items: center;
+    border-radius: 2em 2em 0 0;
+    box-shadow: 0 0 2em 0.05em var(--color-primary-dark);
+    color: var(--color-text);
 }
 
 .content{
@@ -128,10 +218,15 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 0 0 2em 2em;
+    box-shadow: 0 0.5em 2em 0.05em var(--color-primary-dark);
+    padding: 1em 2em 0 2em;
+    color: var(--color-text-dark);
 }
 
 .post_title{
-    margin-top: 0;
+    margin: 0;
+    font-size: 2rem;
 }
 
 footer{
