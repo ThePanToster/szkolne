@@ -16,6 +16,16 @@
     <script src="js/tinymce.js"></script>
 </head>
 <body>
+    <?php
+        session_start();
+        if(isset($_SESSION['user'])){
+            echo '<style>
+                    .signup{ display: none }
+                    .signin{ display: none }
+                    .logout{ display: block }
+                 </style>';
+        }
+    ?>
     <header>
         <h3>PhpMyAnim</h3>
         <label for="btn-register">
@@ -25,7 +35,7 @@
                     Name: <input type="text" name="user_name" required><br>
                     Login: <input type="text" name="user_login" required minlength="3"><br>
                     Password: <input type="password" name="user_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
-                    <input type="submit" name="register" value="Sign Up"><br>
+                    <input type="submit" name="registersub" value="Sign Up"><br>
                 </form>
                 <label for="btn-register-close">
                     <input id="btn-register-close" type="radio" name="register" />
@@ -40,7 +50,7 @@
                 <form action="login.php" method="post">
                     Login: <input type="text" name="user_login" required><br>
                     Password: <input type="password" name="user_password" required><br>
-                    <input type="submit" name="login" value="Sign In"><br>
+                    <input type="submit" name="loginsub" value="Sign In"><br>
                 </form>
                 <label for="btn-login-close">
                     <input id="btn-login-close" type="radio" name="login" />
@@ -49,6 +59,9 @@
             </div>
             <a class="signin">Sign In</a>
         </label>
+        <form class="logout" action="logout.php" method="post">
+            <input type="submit" name="logout">Log out</input>
+        </form>
     </header>
     <main>
         <form method="post" class="postmake">
@@ -116,5 +129,29 @@
         </div>
     </main>
     <footer></footer>
+    <span class="error">
+        <?php
+            if(isset($_GET['status'])){
+                echo "<style>.error{ display: block; animation: fade 2s linear 2s; }</style>";
+                switch ($_GET['status']) {
+                    case 'logerror':
+                        echo "Invalid input";
+                        break;
+                    case 'regerror':
+                        echo "Login is taken";
+                        break;
+                    case 'regok':
+                        echo "Registration succesful. You can log in now";
+                        break;
+                    case 'dberror':
+                        echo "Database error";
+                        break;
+                    case 'empty':
+                        echo "Empty fields";
+                        break;
+                }
+            }
+        ?>
+    </span>
 </body>
 </html>
