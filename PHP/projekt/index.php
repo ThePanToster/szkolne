@@ -60,7 +60,7 @@
             <a class="signin">Sign In</a>
         </label>
         <form class="logout" action="logout.php" method="post">
-            <input type="submit" name="logout">Log out</input>
+            <input id="btn-logout" type="submit" name="logout" value="Log out">
         </form>
     </header>
     <main>

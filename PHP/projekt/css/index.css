@@ -74,6 +74,15 @@ header > h3{
     font-family: var(--font-nav);
 }
 
+.logout > input{
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: var(--font-nav);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
 .signin:hover,
 .signup:hover,
 .logout:hover{
@@ -81,6 +90,23 @@ header > h3{
     transform: scale(1.15);
     transition: ease-out 200ms;
 }
+
+.signup{
+    background: var(--color-text);
+    color: var(--color-accent-dark);
+}
+
+.signin{
+    background: var(--color-primary-dark);
+    color: var(--color-text);
+}
+
+.logout{
+    background: var(--color-primary-dark);
+    display: none;
+}
+
+/* Pop ups */
 
 .popup{
     display: none;
@@ -155,22 +181,6 @@ header > h3{
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.signup{
-    background: var(--color-text);
-    color: var(--color-accent-dark);
-}
-
-.signin{
-    background: var(--color-primary-dark);
-    color: var(--color-text);
-}
-
-.logout{
-    background: var(--color-primary-dark);
-    color: var(--color-text);
-    display: none;
-}
-
 /* Main */
 
 main{
@@ -182,8 +192,10 @@ main{
     padding: 1em 2em;
 }
 
-.postmake{
+.postmake, #mce{
     display: none;
+    min-width: 40em;
+    min-height: 10em;
 }
 
 .post_img{
@@ -242,7 +254,7 @@ footer{
 }
 
 @keyframes fade {
-    from {opacity: 1;}
+    from {opacity: 1; display: block;}
     to {opacity: 0; display: none;}
 }
 
