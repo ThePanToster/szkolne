@@ -253,7 +253,8 @@ input[name="title"]{
 }
 
 .post_bin,
-.post_heart{
+.post_heart,
+.post_edit{
     display: none;
     width: 3em;
     aspect-ratio: 1;
@@ -266,7 +267,8 @@ input[name="title"]{
 }
 
 .post_bin:hover,
-.post_heart:hover{
+.post_heart:hover,
+.post_edit:hover{
     transform: scale(1.15);
     transition: 100ms ease-out;
 }
