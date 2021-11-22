@@ -5,7 +5,7 @@
     --color-accent-dark: #1e1e1e;
     --color-text: #FFFCFF;
     --color-text-dark: #cfcfcf;
-    --color-heart: #fa415a;
+    --color-heart: #d86473;
 
     --font-main: 'Jaldi', sans-serif;
     --font-header: 'Coda Caption', sans-serif;
@@ -189,13 +189,53 @@ main{
     display: flex;
     flex-direction: column;
     row-gap: 4em;
-    padding: 1em 2em;
+    padding: 1.5em 2em;
 }
 
-.postmake, #mce{
+.postmake{
     display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.postmake > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.postmake > input[type="submit"]{
+    font-size: 6rem;
+    padding: 0 0.2em;
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-accent-dark);
+    cursor: pointer;
+}
+
+.postmake > input[type="submit"]:hover{
+    background-color: var(--color-accent);
+    transform: scale(1.05);
+    transition: all ease-out 80ms;
+}
+
+input[name="title"]{
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border: 2px solid rgba(200, 200, 200, 0.3);
+    width: 100%;
+    height: 3em;
+    text-align: center;
+}
+
+#mce{
     min-width: 40em;
     min-height: 10em;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 1em;
 }
 
 .post_img{
@@ -209,16 +249,31 @@ main{
 
 .post_author{
     font-size: 1.5rem;
+    margin-right: 30%;
+}
+
+.post_bin,
+.post_heart{
+    display: none;
+    width: 3em;
+    aspect-ratio: 1;
+    fill: var(--color-text);
+    cursor: pointer;
 }
 
 .post_heart{
-    width: 3em;
-    aspect-ratio: 1;
     fill: var(--color-heart);
+}
+
+.post_bin:hover,
+.post_heart:hover{
+    transform: scale(1.15);
+    transition: 100ms ease-out;
 }
 
 .article{
     max-width: 80%;
+    min-width: 60%;
     margin: 0 auto;
 }
 
@@ -254,15 +309,15 @@ footer{
 }
 
 @keyframes fade {
-    from {opacity: 1; display: block;}
-    to {opacity: 0; display: none;}
+    from {opacity: 1; }
+    to {opacity: 0; }
 }
 
 .error{
     display: none;
     text-align: center;
+    line-height: 100vh;
     color: brown;
-    font-size: 4rem;
     font-family: var(--font-nav);
     z-index: 10;
     position: fixed;
@@ -273,4 +328,6 @@ footer{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    font-size: calc(2rem + 1vw);
 }

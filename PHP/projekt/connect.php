@@ -6,7 +6,7 @@
 
     $connection = @mysqli_connect($host, $user, $pass, $database);
     if(!$connection){
-        echo "Brak połączenia!";
+        echo "Database error!";
         exit();
     }
 ?>
