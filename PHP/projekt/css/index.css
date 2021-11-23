@@ -286,10 +286,6 @@ input[name="title"]{
     cursor: pointer;
 }
 
-#btn-bin-label{
-    display: none;
-}
-
 .post_heart{
     fill: var(--color-heart);
 }

@@ -15,7 +15,7 @@
     <script>
         function postEdit(self){
             var art_id = self.parentElement.parentElement.id.substr(3);
-            self.parentElement.nextSibling.nextSibling.innerHTML = '<form method="post" class="postmake" action="article_edit.php"><div><input type="text" name="title" placeholder="Article title"><textarea id="mce" name="text"></textarea></div><input type="hidden" name="id_article"><input type="submit" value="&#x2714;" name="article_edit"></form>';
+            self.parentElement.nextSibling.nextSibling.innerHTML = '<form method="post" class="postmake" action="article_edit.php"><div><input type="text" name="title" placeholder="Article title"><textarea id="mce" name="text"></textarea></div><input type="hidden" name="id_article" value="'+art_id+'"><input type="submit" value="&#x2714;" name="article_edit"></form>';
         }
     </script>
 </head>
@@ -35,7 +35,6 @@
                     .post_author{ margin-right: 8em }
                     .post_edit{ display: block }
                     .user_img{ display: block }
-                    #btn-bin-label{ display: block; }
                  </style>';
         }
     ?>
@@ -122,14 +121,13 @@
                                 }
                     echo        'viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
                                 <label for="btn-bin'.$row['id_article'].'" id="btn-bin-label">
-                                <form class="postdelete" action="article_delete.php" method="post">
-                                <svg class="post_bin" ';
+                                <form class="postdelete" action="article_delete.php" method="post"';
                                 if (isset($_SESSION['user'])){
                                     if ($user['id_permission']<50 && $user['id_user']!=$row['id_user']){
-                                        echo 'style="visibility:hidden;cursor:default" ';
+                                        echo ' style="display: none"';
                                     }
                                 }
-                    echo        'viewBox="0 0 109.484 122.88" enable-background="new 0 0 109.484 122.88">
+                    echo        '><svg class="post_bin" viewBox="0 0 109.484 122.88" enable-background="new 0 0 109.484 122.88">
                                 <g><path fill-rule="evenodd" clip-rule="evenodd" d="M2.347,9.633h38.297V3.76c0-2.068,1.689-3.76,3.76-3.76h21.144 c2.07,0,3.76,1.691,3.76,3.76v5.874h37.83c1.293,0,2.347,1.057,2.347,2.349v11.514H0V11.982C0,10.69,1.055,9.633,2.347,9.633 L2.347,9.633z M8.69,29.605h92.921c1.937,0,3.696,1.599,3.521,3.524l-7.864,86.229c-0.174,1.926-1.59,3.521-3.523,3.521h-77.3 c-1.934,0-3.352-1.592-3.524-3.521L5.166,33.129C4.994,31.197,6.751,29.605,8.69,29.605L8.69,29.605z M69.077,42.998h9.866v65.314 h-9.866V42.998L69.077,42.998z M30.072,42.998h9.867v65.314h-9.867V42.998L30.072,42.998z M49.572,42.998h9.869v65.314h-9.869 V42.998L49.572,42.998z"/></g>
                                 </svg>
                                 <input type="hidden" name="id_article" value="'.$row['id_article'].'">

@@ -11,7 +11,6 @@
             $d = date("Y-m-d H:i:s");
             $id = $_POST['id_article'];
 
-
             $query = "UPDATE articles SET date='$d', title='$title', content='$txt' WHERE id_article=$id";
             $result = mysqli_query($connection, $query);
 
