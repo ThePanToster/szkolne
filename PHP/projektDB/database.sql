@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 09 Lis 2021, 11:57
+-- Czas generowania: 23 Lis 2021, 12:39
 -- Wersja serwera: 10.4.20-MariaDB
 -- Wersja PHP: 7.3.29
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `projekt`
 --
+CREATE DATABASE IF NOT EXISTS `projekt` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `projekt`;
 
 -- --------------------------------------------------------
 
@@ -68,6 +70,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id_user`, `date`, `name`, `login`, `pass`, `id_permission`) VALUES
+(1, '2021-11-23 11:36:17', 'The PanToster', 'thepantoster', 'bdd2297f93550f01452cbd838c276f0dd22f498b4661394f1528ab88d6e63e6f', 99);
+
+--
 -- Indeksy dla zrzutów tabel
 --
 
@@ -97,7 +106,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT dla tabeli `comments`
@@ -109,7 +118,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
