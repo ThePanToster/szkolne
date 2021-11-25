@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatowanie</title>
+    <script src="skrypt.js" defer></script>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <header><h1>Formatowanie dokumentów HTML</h1></header>
+    <section id="panele">
+        <section id="sec1">
+            <h2>Przykład listy - hobby</h2>
+            <ul>
+                <li>muzyka</li>
+                <li>turystyka<ol>
+                    <li>góry</li>
+                    <li>jeziora</li>
+                    <li>na rowerze</li></ol>
+                </li>
+                <li>książki</li>
+            </ul>
+        </section>
+        <section id="sec2">
+            <h2>Przykład tabeli - rozkład dnia</h2>
+            <table>
+                <tr>
+                    <th>Pora dnia</th><th>obowiązki</th>
+                </tr>
+                <tr>
+                    <td>rano</td><td>nauka</td>
+                </tr>
+                <tr>
+                    <td>południe</td><td>zajęcia dodatkowe</td>
+                </tr>
+                <tr>
+                    <td>popołudnie</td><td rowspan="2">moje hobby</td>
+                </tr>
+                <tr>
+                    <td>wieczór</td>
+                </tr>
+            </table>
+        </section>
+        <section id="sec3">
+            <img src="napisy.png" alt="technologia web">
+        </section>
+    </section>
+    <main>
+        <p>
+            Podaj rozmiar tekstu w procentach: 
+            <input type="number" name="" id="">%
+        </p>
+        <p>
+            <select name="" id="">
+                <option value="prosty">prosty</option>
+                <option value="kursywa">kursywa</option>
+            </select>
+        </p>
+        <p>
+            Jakim kolorem sformatować tekst? Wybierz przycisk<br>
+            <button id="btn1" onclick="skrypt('red')">&nbsp;</button><button id="btn2" onclick="skrypt('green')">&nbsp;</button><button id="btn3" onclick="skrypt('blue')">&nbsp;</button>
+        </p>
+        <p id="zmienny">
+            To jest przykład paragrafu, który może być dowolnie formatowany przez Java Script
+        </p>
+    </main>
+    <footer>
+        <p>
+            Formatowaniem tekstu zajmował się: <i>02232511111</i><br><br>
+            <a href="https://formatowanie.pl" target="_blank" rel="noopener noreferrer">Odwiedź także</a>
+        </p>
+    </footer>
+</body>
+</html>

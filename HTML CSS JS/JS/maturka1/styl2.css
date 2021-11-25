@@ -1,0 +1,55 @@
+body{
+    font-family: Georgia;
+}
+header{
+    background-color: #824555;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+#sec1,
+#sec2{
+    background-color: #a26475;
+    color: white;
+    width: 30%;
+    height: 300px;
+}
+#sec3{
+    background-color: #a26475;
+    color: white;
+    width: 40%;
+    height: 300px;
+    text-align: right;
+}
+main{
+    background-color: #f0eae2;
+    padding: 50px;
+}
+footer{
+    background-color: #824555;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+table,
+td,
+th{
+    border: 2px solid #69293a;
+    padding: 7px;
+    border-collapse: collapse;
+}
+ul{
+    list-style-type: square;
+}
+#btn1{
+    background-color: red;
+}
+#btn2{
+    background-color: green;
+}
+#btn3{
+    background-color: blue;
+}
+#panele{
+    display: flex;
+}
