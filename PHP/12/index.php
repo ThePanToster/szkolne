@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="button.js"></script>
 </head>
 <body>
     <form action="savefiles.php" method="post" enctype="multipart/form-data">
@@ -17,8 +18,9 @@
             $images = scandir("pliki");
             foreach($images as $img)
                 if ($img != ".." && $img != ".")
-                    echo '<img src="pliki/'.$img.'">';
+                    echo '<div class="pic" style="background-image:url(\'pliki/'.$img.'\')"><input type="button" value="X" id="'.$img.'" onclick="komunikat(this)"></div>';
         ?>
     </main>
+    
 </body>
 </html>

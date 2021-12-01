@@ -8,6 +8,13 @@ main{
     gap: 2em;
 }
 
-main > img{
+.pic{
     width: 300px;
+    height: 250px;
+    position: relative;
+    background-size: cover;
+}
+
+.pic > input{
+    background-color: rgba(255,0,0,200);
 }
