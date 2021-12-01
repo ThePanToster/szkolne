@@ -1,0 +1,13 @@
+body{
+    background-color: darkgray;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+main > img{
+    width: 300px;
+}
