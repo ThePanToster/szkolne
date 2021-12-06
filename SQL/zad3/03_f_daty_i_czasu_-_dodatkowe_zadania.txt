@@ -1,0 +1,21 @@
+4) Wyœwietl datê wpisu nadaj alias: data sprzeda¿y.
+   Druga kolumna - dodaj do daty sprzeda¿y z tabeli 
+   rejestry 14 dni i nadaj alias: termin p³atnoœci.
+
+5) Wyœwietl datê w formacie: 1 maj 2021 z tabeli Rejestry
+
+
+
+1)
+
+    SELECT DATEDIFF(pierwsza data, druga data) FROM Tabela
+
+SELECT DATEDIFF(
+
+    (SELECT data_wpisu FROM Rejestry WHERE samochod=1),
+
+    (SELECT data_wpisu FROM Rejestry WHERE samochod=2)
+
+
+) FROM Rejestry;
+    
