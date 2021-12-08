@@ -16,6 +16,14 @@
         align-items: center;
         justify-content: center;
         height: 90vh;
+        position: relative;
+    }
+    .eh{
+        position: absolute;
+        width: 50px;
+        aspect-ratio: 1;
+        background-color: rgba(100,100,100,80);
+        pointer-events: none;
     }
     div::selection {
         background: rgb(254, 254, 254);
@@ -45,6 +53,7 @@
     <div>
         Moja praca, której lepiej aby nikt nie skopiował...
     </div>
+    <div class="eh"></div>
     <script>
         document.querySelector('div').addEventListener("copy", event => {
             document.querySelector('body').style.animation = "anim 400ms ease-in infinite";
@@ -53,6 +62,14 @@
             document.querySelector('div').style.fontSize = "7rem";
             document.querySelector('div').style.fontFamily = "Impact";
             document.querySelector('div').style.userSelect = "none";
+        });
+        document.querySelector('body').addEventListener('pointermove', (event) => {
+            var x = event.clientX - 25;
+            var y = event.clientY - 25;
+            
+            document.querySelector('.eh').style.left = x+"px";
+            document.querySelector('.eh').style.top = y+"px";
+            console.log(coor);
         });
     </script>
 </body>
