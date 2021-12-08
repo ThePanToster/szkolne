@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root{
+        --color1: red;
+        --color2: black;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+    }
+    div::selection {
+        background: rgb(254, 254, 254);
+        color: rgb(253, 253, 253);
+    }
+    @keyframes anim{
+        from{
+            background-color: var(--color1);
+            color: var(--color2);
+        }
+        50%{
+            background-color: var(--color2);
+            color: var(--color1);
+        }
+        to{
+            background-color: var(--color1);
+            color: var(--color2);
+        }
+    }
+    @keyframes obr{
+        to{
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<body>
+    <div>
+        Moja praca, której lepiej aby nikt nie skopiował...
+    </div>
+    <script>
+        document.querySelector('div').addEventListener("copy", event => {
+            document.querySelector('body').style.animation = "anim 400ms ease-in infinite";
+            document.querySelector('div').style.animation = "obr 1100ms infinite linear";
+            document.querySelector('div').innerText = "OSTRZEGAŁEM";
+            document.querySelector('div').style.fontSize = "7rem";
+            document.querySelector('div').style.fontFamily = "Impact";
+            document.querySelector('div').style.userSelect = "none";
+        });
+    </script>
+</body>
+</html>
