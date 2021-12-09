@@ -49,14 +49,12 @@
         </footer>
     </main>
     <script>
-        document.querySelector('#kolor').addEventListener("change", event => {
-            var kolor = document.querySelector('#kolor').value;
-            document.querySelector('.right img').setAttribute("src", kolor+".png");
-        });
         document.querySelector('.left').addEventListener("change", event => {
             var kolor = document.querySelector('#kolor').value;
             var wynik = "Cena bazowa: 75000 zł";
             var suma = 75000;
+
+            document.querySelector('.right img').setAttribute("src", kolor+".png");
             if (kolor != "szary"){
                 wynik += "<br>Lakier: 9000 zł";
                 suma += 9000;
