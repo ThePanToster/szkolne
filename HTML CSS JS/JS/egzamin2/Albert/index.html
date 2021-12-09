@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfigurator wyposażenia</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <main>
+        <header>
+            <img src="baner.jpg" alt="baner">
+        </header>
+        <section class="left">
+            <hr>
+            <h2>Kolor</h2>
+            <select name="kolor" id="kolor">
+                <option value="szary">szary</option>
+                <option value="niebieski">niebieski</option>
+                <option value="czerwony">czerwony</option>
+                <option value="zolty">żółty</option>
+                <option value="zielony">zielony</option>
+            </select>
+            <hr>
+            <h2>Felgi</h2>
+            <label for="stalowe">Stalowe</label>
+            <input type="radio" name="felgi" id="stalowe" value="stalowe" checked><br>
+            <label for="aluminiowe">Aluminiowe</label>
+            <input type="radio" name="felgi" id="aluminiowe" value="aluminiowe">
+            <hr>
+            <h2>Doposażenie</h2>
+            <label for="czuj">Czujniki parkowania</label>
+            <input type="checkbox" name="czuj" id="czuj"><br>
+            <label for="climatronic">Climatronic</label>
+            <input type="checkbox" name="climatronic" id="climatronic"><br>
+            <label for="nawigacja">Nawigacja</label>
+            <input type="checkbox" name="nawigacja" id="nawigacja">
+            <hr>
+        </section>
+        <section class="right">
+            <h1>Twój samochód</h1>
+            <img src="szary.png" alt="foto">
+            <h1>Wycena</h1>
+            <p>Cena bazowa 75000zł</p>
+        </section>
+        <footer>
+            <p>Autor strony: <i>12345678901</i></p>
+        </footer>
+    </main>
+    <script>
+        document.querySelector('#kolor').addEventListener("change", event => {
+            var kolor = document.querySelector('#kolor').value;
+            document.querySelector('.right img').setAttribute("src", kolor+".png");
+        });
+        document.querySelector('.left').addEventListener("change", event => {
+            var kolor = document.querySelector('#kolor').value;
+            var wynik = "Cena bazowa: 75000 zł";
+            var suma = 75000;
+            if (kolor != "szary"){
+                wynik += "<br>Lakier: 9000 zł";
+                suma += 9000;
+            }
+            if (document.querySelector('#aluminiowe').checked){
+                wynik += "<br>Felgi aluminiowe: 7000 zł";
+                suma += 7000;
+            }
+            if (document.querySelector('#czuj').checked){
+                wynik += "<br>Czujniki parkowania: 6500 zł";
+                suma += 6500;
+            }
+            if (document.querySelector('#climatronic').checked){
+                wynik += "<br>Climatronic: 8500 zł";
+                suma += 8500;
+            }
+            if (document.querySelector('#nawigacja').checked){
+                wynik += "<br>Nawigacja: 5000 zł";
+                suma += 5000;
+            }
+            wynik += "<hr><h1>RAZEM: "+suma+" zł</h1>";
+            document.querySelector('.right p').innerHTML = wynik;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body{
+    font-family: Verdana;
+    background-color: #7d7f85;
+}
+
+main{
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    height: 200px;
+    width: 100%;
+}
+
+.left{
+    background-color: #f8c013;
+    text-align: center;
+    height: 600px;
+    width: 30%;
+}
+
+.right{
+    background-color: #c2c3c2;
+    text-align: center;
+    color: #886829;
+    height: 560px;
+    width: 70%;
+    padding-top: 40px;
+}
+
+footer{
+    background-color: #1a3b98;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.right img{
+    width: 75%;
+    margin: auto;
+}
+
+.right p{
+    margin-top: 30px;
+    margin-right: 50px;
+    text-align: right;
+}
